@@ -45,7 +45,7 @@ ScranAdvisor.prototype.findMostCommonCuisine = function(){
 };
 
 // takes in a substring
-ScranAdvisor.prototype.searchByName = function(subString){
+ScranAdvisor.prototype.searchBySubstring = function(subString){
     // filter to create a new list containing all of the restaurant objects containing the substring
     // map to return a list containing the name of each restaurant in the list of objects
     // case insensitivity by changing restaurant name and substring to lower case

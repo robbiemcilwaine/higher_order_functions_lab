@@ -127,12 +127,12 @@ describe('ScranAdvisor', () => {
     test('can find the most common cuisine type', () => {
       // const expected = scranAdvisor.findMostCommonCuisine();
       // const actual = scranAdvisor.findMostCommonCuisine();
-      console.log(scranAdvisor.findMostCommonCuisine());
+      console.log(scranAdvisor.mostCommonCuisine());
     });
 
     test('can find restaurant with substring', () => {
       const expected = [ 'The Brunch Club', "Rudy's Pizza", 'Humble Crumble Camden' ];
-      const actual = scranAdvisor.searchByName('ru');
+      const actual = scranAdvisor.searchBySubstring('ru');
       expect(actual).toEqual(expected);
     });
 
