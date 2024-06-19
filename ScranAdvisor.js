@@ -23,25 +23,37 @@ ScranAdvisor.prototype.findMostCommonCuisine = function(){
     // create empty object for storing key-value pairs
     // key - cuisine
     // value - number of restaurant's with that cuisine
-    cuisineCounts = {};
+    let cuisineCounts = {};
     // iterate through each restaurant
     this.restaurants.forEach((restaurant) => {
         // iterate through each cuisine in the cuisine list of each restaurant
-        console.log(cuisineCounts);
         restaurant.cuisines.forEach((cuisine) => {
             // check if cuisine is not in the object cuisineCounts
             // if so, set it to one
-            if (!('cuisine' in cuisineCounts)) {
+            if (!(cuisine in cuisineCounts)) {
                 cuisineCounts[cuisine] = 1;
                 // if it is in the cuisineCounts, increment it's value by one
-
-                // this condition is never fulfilled
             } else {
                 cuisineCounts[cuisine] += 1;
             }
         });
     });
-    return cuisineCounts;
+
+    // declare empty variable for most common cuisine
+    let mostCommonCuisine;
+    // declare highest cuisine count to be zero
+    let highestCount = 0;
+    // iterate through cuisines in cuisineCounts object
+    for (let cuisine in cuisineCounts) {
+        // check if the cuisine is higher than the highest cuisine count
+        if (cuisineCounts[cuisine] > highestCount) {
+            // if so, set the highest count to be the current cuisine count
+            highestCount = cuisineCounts[cuisine];
+            // change the most common cuisine to the current cuisine
+            mostCommonCuisine = cuisine;
+        }
+    }
+    return mostCommonCuisine;
 };
 
 // takes in a substring
